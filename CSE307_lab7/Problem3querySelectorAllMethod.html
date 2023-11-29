@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change() {
+            const list = document.querySelectorAll(".example").length;
+
+            for (let i = 0; i < list; i++) {
+                var item = document.querySelectorAll(".example");
+                item[i].style.backgroundColor = "yellow";
+                item[i].style.padding = "10px";
+                item[i].style.margin = "10px";
+                item[i].style.fontSize = "20px";
+                item[i].style.border = "3px solid red";
+
+            }
+           
+            const listlink = document.querySelectorAll("a").length;
+            for (let i = 0; i < list; i++) {
+                var item = document.querySelectorAll("a");
+
+                item[i].style.border = "3px solid red";
+                item[i].style.textDecoration = "none";
+
+            }
+
+            const listTitle = document.querySelectorAll(".title").length;
+            for (let i = 0; i < list; i++) {
+                var item = document.querySelectorAll(".title");
+
+                item[i].style.color = "red";
+               
+            }
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <p class="example" style="background-color: aqua; border:3px solid blue;">This is the first paragraph with class
+            "example"</p>
+        <p class="example" style="background-color: aqua; border: 3px solid blue;">This is another paragraph</p>
+        <p>This is regular paragraph</p>
+        <p><a href="">Link with target attribute</a></p>
+        <p><a href="">Another link with target attribute</a></p>
+        <h1 style="font-size: 30px; color: blueviolet;" class="title">Title 1</h1>
+        <h2 style="font-size: 20px; color: blueviolet;" class="title">Title 2</h2>
+        <button type="button" onclick="change()"> Change</button>
+    </div>
+
+</body>
+
+</html>

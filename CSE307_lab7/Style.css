@@ -1,0 +1,12 @@
+.closebtn {
+    position: absolute;
+    top: 1300px;
+    right: 250px;
+    color: violet;
+    font-size: 500px;
+    cursor: pointer;
+  }
+  img:hover {
+    opacity: 1;
+    width: 25%;
+  }

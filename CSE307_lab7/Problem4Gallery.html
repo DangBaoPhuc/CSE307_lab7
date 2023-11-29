@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;         
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <center>
+        <h2>Tabbed Image Gallery</h2>
+        <h3>Click on the images below</h3>
+        <div style="align-items: center;">
+            <img src="img/EnglishForTech.jpg" alt="Couldnt load image" width="10%" height="10%" onclick="myFunction(this)">
+            <img src="img/BARC.png" alt="Couldnt load image" width="10%" height="10%" onclick="myFunction(this)">
+            <img src="img/Davinci.png" alt="Couldnt load image" width="10%" height="10%" onclick="myFunction(this)">
+            <img src="img/harrypotter.png" alt="Couldnt load image" width="10%" height="10%" onclick="myFunction(this)">
+        </div>
+        <div> 
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <div id="imgtext"></div>
+        </div>
+    </center>
+</body>
+
+</html>
