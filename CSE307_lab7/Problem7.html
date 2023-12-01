@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<script>
+    var data;
+    async function GetData() {
+        var url = 'https://fakestoreapi.com/users';
+        await fetch(url)
+            .then((res) => res.json())
+            .then((json) => data = json); console.log(data);
+
+    }
+    async function RenderItem() {
+        var str = '';
+        await GetData();
+
+        str += `<table border="1" style="width: 100%;">
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        `
+        for (let i = 0; i < data.length; i++) {
+            str += `           
+        <tr>`
+            str += `<td>${data[i].email}</td>`
+            str += ` <td>${data[i].username}</td>`
+            str += ` <td>${data[i].password}</td>`
+            str += ` <td>${data[i].name.firstname}</td>`
+            str += `   <td>${data[i].name.lastname}</td>`
+            str += ` <td>${data[i].phone}</td>`
+            str += `  <td>${data[i].address.number+"-"+ data[i].address.street +"-" +data[i].address.city}</td>`
+            str += `  </tr>         
+       
+            `;
+        }
+        str += `</table`;
+        document.getElementById("res").innerHTML += str;
+
+
+    }
+
+</script>
+
+
+<body onload="RenderItem()">
+    <div id="res"></div>
+
+</body>
+
+</html>
