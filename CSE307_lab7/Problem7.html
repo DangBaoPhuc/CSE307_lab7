@@ -18,6 +18,7 @@
     }
     async function RenderItem() {
         var str = '';
+
         await GetData();
 
         str += `<table border="1" style="width: 100%;">
@@ -36,11 +37,12 @@
         <tr>`
             str += `<td>${data[i].email}</td>`
             str += ` <td>${data[i].username}</td>`
-            str += ` <td>${data[i].password}</td>`
+
+            str += ` <td><input type="password" value="${data[i].password}"></td>`
             str += ` <td>${data[i].name.firstname}</td>`
             str += `   <td>${data[i].name.lastname}</td>`
             str += ` <td>${data[i].phone}</td>`
-            str += `  <td>${data[i].address.number+"-"+ data[i].address.street +"-" +data[i].address.city}</td>`
+            str += `  <td>${data[i].address.number + "-" + data[i].address.street + "-" + data[i].address.city}</td>`
             str += `  </tr>         
        
             `;
@@ -52,7 +54,7 @@
     }
 
 </script>
-
+<input type="password" value="" hidden="false">
 
 <body onload="RenderItem()">
     <div id="res"></div>
